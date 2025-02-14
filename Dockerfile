@@ -1,4 +1,4 @@
-FROM jjrom/rocket:latest
+FROM jjrom/rocket:10.0.0
 
 ENV ROCKET_APP_TITLE="Marine Plastic Tracker" \
     ROCKET_APP_DESCRIPTION="This application provide a What If Scenario for the Marine Plastic Tracker" \
