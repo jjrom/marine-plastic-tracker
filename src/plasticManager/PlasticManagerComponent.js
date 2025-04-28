@@ -166,8 +166,8 @@
 
             // Trigger action
             if (!self.watch.apiIsRunning) {
-                self.watch.currentAction = self.watch.currentAction || 'origin';
-                _getData(self.watch.currentAction);
+                self.watch.currentAction = self.watch.currentAction || 'destination';
+                //_getData(self.watch.currentAction);
             }
 
         }
