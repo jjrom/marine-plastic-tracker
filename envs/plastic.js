@@ -145,7 +145,7 @@
     window.__env.planets.earth.gazetteer.url =
         "https://catalog.dive.edito.eu/gazetteer/default";
     window.__env.planets.earth.layers = [
-        {
+        /*{
             id: "label",
             title: "Road (light)",
             thumbnail: "assets/img/backgrounds/roadlight.png",
@@ -159,7 +159,7 @@
                 retina: true,
                 wrapX: true
             }
-        },/*,
+        },*/
         {
             id: "VIIRS_Black_Marble",
             title: "Night",
@@ -177,7 +177,7 @@
                 attributions: '{:id:} - <a href="https://earthdata.nasa.gov/about/science-system-description/eosdis-components/global-imagery-browse-services-gibs">NASA EOSDIS GIBS</a>',
                 wrapX: true
             }
-        },*/
+        },
         {
             id: "bigemitters",
             title: "Largest emissions",
