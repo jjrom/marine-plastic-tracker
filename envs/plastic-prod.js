@@ -27,7 +27,7 @@
 
     window.__env.plastic = {
         endPoint:'https://project-infra-251589-0.lab.dive.edito.eu',
-        //defaultDate:"2017-01-01",
+        defaultDate:"2017-01-01",
         dates:[
             "2017-01-01",
             "2017-02-01",
@@ -145,31 +145,39 @@
     window.__env.planets.earth.gazetteer.url =
         "https://catalog.dive.edito.eu/gazetteer/default";
     window.__env.planets.earth.layers = [
-        {
-            id: "CanvasDark",
-            title: "Road (dark)",
-            thumbnail: "assets/img/backgrounds/roaddark.png",
-            color: "dark",
-            type: "bing",
+         {
+            id: "label",
+            title: "Road (light)",
+            thumbnail: "assets/img/backgrounds/roadlight.png",
+            color: "light",
+            type: "stamen",
             isBackground: true,
             group: "Permanent",
+            visible: true,
             options: {
-                imagerySet: "CanvasDark",
+                layer: "alidade_smooth_dark",
+                retina: true,
                 wrapX: true
             }
-        },
+        },/*,
         {
-            id: "Aerial",
-            title: "Aerial",
-            thumbnail: "assets/img/backgrounds/aerial.png",
-            type: "bing",
+            id: "VIIRS_Black_Marble",
+            title: "Night",
+            thumbnail: "assets/img/backgrounds/VIIRS_Black_Marble.png",
+            color: "dark",
+            type: "xyz",
+            format: 'png',
+            tileMatrix: 8,
+            time: '2016-01-01',
             isBackground: true,
+            group: "Permanent",
             visible: false,
             options: {
-                imagerySet: "Aerial",
-                wrapX: true,
-            },
-        },
+                url: 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/{:id:}/default/{:time:}/GoogleMapsCompatible_Level{:tileMatrix:}/{z}/{y}/{x}.{:format:}',
+                attributions: '{:id:} - <a href="https://earthdata.nasa.gov/about/science-system-description/eosdis-components/global-imagery-browse-services-gibs">NASA EOSDIS GIBS</a>',
+                wrapX: true
+            }
+        },*/
         {
             id: "bigemitters",
             title: "Largest emissions",

@@ -37,7 +37,7 @@
             animationSpeed:1000,
             animationIsBackward:false,
             speedFactor:1,
-            currentAction: null,
+            currentAction: 'destination',
             datetime: _endOfTime,
             drawToolbox: false,
             endOfTime: _endOfTime,
@@ -204,21 +204,24 @@
          * Get origin of plastic arriving at location
          */
         self.getOrigin = function () {
-            return _getData('origin');
+            self.watch.currentAction = 'origin';
+            //return _getData('origin');
         };
 
         /**
          * Get destination of plastic leaving location
          */
         self.getDestination = function () {
-            return _getData('destination');
+            self.watch.currentAction = 'destination';
+            //return _getData('destination');
         };
 
         /**
          * Get destination of plastic leaving location
          */
         self.getTracks = function () {
-            return _getData('tracks');
+            self.watch.currentAction = 'tracks';
+            //return _getData('tracks');
         };
 
         /**
@@ -501,6 +504,11 @@
                 return;
             }
 
+            var simpleLonLat = [
+                lonLat[0].toFixed(4),
+                lonLat[1].toFixed(4)
+            ];
+                
             restoGazetteerAPI.reverse(
                 rocketHolder.mapContext.planetInfo.gazetteer,
                 {
@@ -512,7 +520,7 @@
                 .then(function (locations) {
                     $timeout(function () {
                         self.watch.gazetteerIsLoading = false;
-                        _rocket.title = locations && locations[0] ? locations[0].name : lonLat.join(',');
+                        _rocket.title = locations && locations[0] ? locations[0].name : simpleLonLat.join(',');
                         olLayer.set('_rocket', _rocket);
                         _locationToCache(olLayer);
                     });
@@ -520,7 +528,7 @@
                 .catch(function (error) {
                     $timeout(function () {
                         self.watch.gazetteerIsLoading = false;
-                        _rocket.title = lonLat.join(',');
+                        _rocket.title = simpleLonLat.join(',');
                         olLayer.set('_rocket', _rocket);
                         _locationToCache(olLayer);
                     });
@@ -552,8 +560,8 @@
 
             // Trigger action
             if (!self.watch.apiIsRunning) {
-                self.watch.currentAction = self.watch.currentAction || 'origin';
-                _getData(self.watch.currentAction);
+                self.watch.currentAction = self.watch.currentAction || 'destination';
+                //_getData(self.watch.currentAction);
             }
 
         }
