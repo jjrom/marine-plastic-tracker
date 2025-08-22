@@ -11,9 +11,9 @@
     'use strict';
 
     angular.module('rocket')
-        .controller('PlasticManagerComponent', ['$timeout', 'rocketHolder', 'rocketCache', 'rocketServices', 'restoGazetteerAPI', 'restoAPI', 'config', PlasticManagerComponent]);
+        .controller('PlasticManagerComponent', ['$timeout', 'rocketHolder', 'rocketCache', 'rocketServices', 'gazetteerAPI', 'restoAPI', 'config', PlasticManagerComponent]);
 
-    function PlasticManagerComponent($timeout, rocketHolder, rocketCache, rocketServices, restoGazetteerAPI, restoAPI, config) {
+    function PlasticManagerComponent($timeout, rocketHolder, rocketCache, rocketServices, gazetteerAPI, restoAPI, config) {
 
         var self = this;
 
@@ -509,7 +509,7 @@
                 lonLat[1].toFixed(4)
             ];
                 
-            restoGazetteerAPI.reverse(
+            gazetteerAPI.reverse(
                 rocketHolder.mapContext.planetInfo.gazetteer,
                 {
                     lon: lonLat[0],

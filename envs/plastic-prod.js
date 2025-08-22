@@ -143,7 +143,7 @@
     
     // Gazetteers
     window.__env.planets.earth.gazetteer.url =
-        "https://catalog.dive.edito.eu/gazetteer/default";
+        "https://egg.lab.dive.edito.eu";
     window.__env.planets.earth.layers = [
          /*{
             id: "label",
